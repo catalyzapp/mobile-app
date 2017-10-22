@@ -18,8 +18,7 @@ import Card from '../components/lib/Card';
 import { getAuth, setAuth } from '../navigation/utils';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
-
-function Thread (props {
+function Thread(props) {
   return (
     <View>
       <Text>{props.bio}</Text>
@@ -36,14 +35,11 @@ class Messages extends Component {
   };
 
   state = {
-    threads: [
-
-    ],
+    threads: [],
   };
 
   async componentDidMount() {
     let account = getAuth();
-
     // let res = await fetch(`https://mywebsite.com/history/`, {
     //   method: 'POST',
     //   headers: {
@@ -59,9 +55,10 @@ class Messages extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Screen style={{ alignItems: 'center' }}>
-        <List data={this.state.threads} ui={Thread}/>
+        <List data={this.state.threads} ui={Thread} />
       </Screen>
     );
   }
