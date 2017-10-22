@@ -21,8 +21,6 @@ function Card(props) {
 
 let styles = StyleSheet.create({
   card: {
-    borderColor: '#ECECEC',
-    borderWidth: 1,
     borderRadius: 6,
     width: '90%',
     height: 230,
