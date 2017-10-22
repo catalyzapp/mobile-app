@@ -65,15 +65,31 @@ class Messages extends Component {
   render() {
     console.log(this.props);
     return (
-      <Screen style={{ alignItems: 'center', width: '100%' }}>
+      <Screen style={{ alignItems: 'center', width: '100%', margin: 5 }}>
         <List
+          small={true}
           data={this.state.threads}
           navigate={this.props.navigation.navigate}
-          ui={Thread}
+          ui={Card}
         />
       </Screen>
     );
   }
 }
+
+let styles = StyleSheet.create({
+  btn: {
+  },
+  btnActive: {
+
+  },
+  genderGroup: {
+  },
+  img: {
+  },
+  finishContainer: {
+
+  },
+});
 
 export default Messages;

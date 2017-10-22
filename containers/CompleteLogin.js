@@ -15,9 +15,10 @@ class CompleteLogin extends Component {
     return {
       headerTitle: (
         <Text size="xl" weight="bold">
-          {navigation.state.params.role === 'mentor'
+          "Mentor"
+          {/* {navigation.state.params.role === 'mentor'
             ? screenProps.t('completeLogin:mentor')
-            : screenProps.t('completeLogin:mentee')}
+            : screenProps.t('completeLogin:mentee')} */}
         </Text>
       ),
       headerStyle: screenTabStyles,
