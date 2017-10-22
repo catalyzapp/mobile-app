@@ -7,7 +7,7 @@ function Card(props) {
   return (
     <LinearGradient
       colors={['#DEFF59', '#7EFE63']}
-      style={[styles.card, props.style]}
+      style={[styles.card, props.style, {borderRadius: 10}]}
     >
       <Text style={styles.text}>{props.children}</Text>
       <Text style={styles.text}>Wanna Help</Text>
@@ -17,8 +17,6 @@ function Card(props) {
 
 let styles = StyleSheet.create({
   card: {
-    borderColor: '#ECECEC',
-    borderWidth: 1,
     borderRadius: 6,
     width: '90%',
     height: 230,
