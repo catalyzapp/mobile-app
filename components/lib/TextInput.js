@@ -48,11 +48,12 @@ function TextInput(props) {
 
 let styles = StyleSheet.create({
   design: {
-    backgroundColor: '#f3f3f3',
-    borderRadius: 3,
     padding: 10,
     margin: 3,
+    fontWeight: '500',
     color: '#000',
+    borderBottomWidth: 2,
+    borderBottomColor: '#000',
   },
   sm: {
     height: 40,

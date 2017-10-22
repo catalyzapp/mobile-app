@@ -13,7 +13,7 @@ class CompleteLogin extends Component {
   static navigationOptions = {
     headerTitle: (
       <Text size="xl" weight="bold">
-        Finish Login
+        Mentor
       </Text>
     ),
     headerStyle: screenTabStyles,
@@ -117,67 +117,31 @@ class CompleteLogin extends Component {
           paddingRight: 10,
         }}
       >
+        <View style={{ alignItems: 'flex-start', padding: 10, width: '100%' }}>
+          <Text size="md" weight="bold" color="#CFCFCF">
+            We need some info
+          </Text>
+        </View>
         <TextInput
-          onChange={firstName => this.setState(() => ({ firstName }))}
-          value={this.state.firstName}
-          placeholder="First Name"
+          onChange={bio => this.setState(() => ({ bio }))}
+          value={this.state.bio}
+          placeholder="Give us a small bio"
         />
         <TextInput
-          onChange={lastName => this.setState(() => ({ lastName }))}
-          value={this.state.lastName}
-          placeholder="Last Name"
+          onChange={country => this.setState(() => ({ country }))}
+          value={this.state.country}
+          placeholder="Country of Origin"
         />
         <TextInput
-          onChange={email => this.setState(() => ({ email }))}
-          value={this.state.email}
-          placeholder="Email"
-          autoCapitalize="none"
+          onChange={education => this.setState(() => ({ education }))}
+          value={this.state.education}
+          placeholder="Education"
         />
         <TextInput
           onChange={username => this.setState(() => ({ username }))}
           value={this.state.username}
           placeholder="Username"
           autoCapitalize="none"
-        />
-        <Datepicker date={this.state.dob} onDateChange={this.onDateChange} />
-        <View style={styles.genderGroup}>
-          <Button
-            onPress={() => this.setState(() => ({ gender: 'male' }))}
-            style={this.state.gender === 'male' ? styles.btnActive : styles.btn}
-            txtColor={this.state.gender === 'male' ? '#fff' : '#000'}
-            size="sm"
-          >
-            Male
-          </Button>
-          <Button
-            onPress={() => this.setState(() => ({ gender: 'female' }))}
-            style={
-              this.state.gender === 'female' ? styles.btnActive : styles.btn
-            }
-            txtColor={this.state.gender === 'female' ? '#fff' : '#000'}
-            size="sm"
-          >
-            Female
-          </Button>
-          <Button
-            onPress={() => this.setState(() => ({ gender: 'other' }))}
-            style={
-              this.state.gender === 'other' ? styles.btnActive : styles.btn
-            }
-            txtColor={this.state.gender === 'other' ? '#fff' : '#000'}
-            size="sm"
-          >
-            Other
-          </Button>
-        </View>
-        <Image
-          style={styles.img}
-          resizeMode="contain"
-          source={{
-            uri: this.state.picture
-              ? this.state.picture
-              : 'http://nemanjakovacevic.net/wp-content/uploads/2013/07/placeholder.png',
-          }}
         />
         <View style={styles.finishContainer}>
           <Button onPress={this.finishLogin} size="xl">
