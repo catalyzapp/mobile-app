@@ -7,13 +7,7 @@ function Card(props) {
   console.log(props.navigation);
   return (
     <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
-      <View
-        style={[
-          styles.card,
-          props.extraMargin === true ? styles.extraMargin : {},
-          props.style,
-        ]}
-      >
+      <View style={[styles.view]}>
         <LinearGradient
           colors={['#DEFF59', '#7EFE63']}
           style={[
@@ -31,6 +25,9 @@ function Card(props) {
 }
 
 let styles = StyleSheet.create({
+  view: {
+    width: '100%',
+  },
   card: {
     borderRadius: 6,
     width: '90%',
