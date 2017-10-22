@@ -11,21 +11,21 @@ The same can also be applied to local communities with people that may be lookin
 
 The following pictures will show you a flow of how you can sign up and become a Mentor or Mentee for Catalyze !
 
-1) Here you have a log in page wich connects to Facebook
+Step one: Here you have a log in page wich connects to Facebook
 
-![Catalyze1] (https://ibb.co/bAi5y6)
+![Catalyze1] (https://image.ibb.co/nM1sd6/Screen_Shot_2017_10_22_at_12_28_07_PM.png)
 
-2)Mentors will follow the following flow
+Step two: Mentors will follow the following flow
 
-![Catalyze2](https://ibb.co/jie0WR)
+![Catalyze2](https://image.ibb.co/gkBsd6/Screen_Shot_2017_10_22_at_12_28_23_PM.png)
 
-3)Mentees will go through the following flow 
+Step three: Mentees will go through the following flow 
 
-![Catalyze3](https://ibb.co/gPXyJ6)
+![Catalyze3](https://image.ibb.co/jzrErR/Screen_Shot_2017_10_22_at_12_28_15_PM.png)
 
-4)The mentor will then be able to choose conversations with those they are similar with according to our machine learning
+Step four: The mentor will then be able to choose conversations with those they are similar with according to our machine learning
 
-![Catalyze4](https://ibb.co/n5pdJ6)
+![Catalyze4](https://image.ibb.co/jOmQy6/Screen_Shot_2017_10_22_at_12_28_30_PM.png)
 
 
 
