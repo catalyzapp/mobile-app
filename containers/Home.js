@@ -18,6 +18,7 @@ import TextInput from '../components/lib/TextInput';
 import Text from '../components/lib/Text';
 import Card from '../components/lib/Card';
 import { screenTabStyles } from '../styles/navigatorStyles';
+import { logIn, getAuth, setAuth } from '../navigation/utils';
 
 class Home extends Component {
   static navigationOptions = ({ navigation, screenProps }) => {
@@ -35,12 +36,38 @@ class Home extends Component {
     };
   };
 
+  state = {
+    recommendations: [],
+  };
+
+  async componentDidMount() {
+    let account = await getAuth();
+    if (account === false) {
+      this.props.navigation.navigate('Landing');
+    }
+
+    let res = await fetch(`https://mywebsite.com/matchup`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        facebook_id: account.fbId,
+      }),
+    });
+
+    this.setState(() => ({ recommendations: res.recommendations }));
+  }
+
   render() {
     return (
       <Screen style={{ alignItems: 'center' }}>
-        <Card navigate={this.props.navigation.navigate} extraMargin={true}>
-          Some kid who needs a lot of help.
-        </Card>
+        <List
+          data={this.state.recommendations}
+          navigate={this.props.navigation.navigate}
+          ui={Card}
+        />
       </Screen>
     );
   }

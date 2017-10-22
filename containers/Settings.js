@@ -18,6 +18,7 @@ import Swipe from '../components/lib/Swipe';
 import TextInput from '../components/lib/TextInput';
 import UserIdentity from '../components/lib/UserIdentity';
 import { screenTabStyles } from '../styles/navigatorStyles';
+import { logIn, getAuth, setAuth } from '../navigation/utils';
 
 class Settings extends Component {
   static navigationOptions = ({ navigate }) => {
@@ -26,7 +27,7 @@ class Settings extends Component {
       headerStyle: screenTabStyles,
     };
   };
-  
+
   state = {
     fbid: '',
     firstName: '',
@@ -58,66 +59,68 @@ class Settings extends Component {
   render() {
     return (
       <Screen
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingLeft: 10,
-        paddingRight: 10,
-      }}
-    >
-      <View style={{ alignItems: 'center', padding: 10, width: '100%' }}>
-        <Text size="lg" weight="medium" color="#000">
-          We Need Some Info
-        </Text>
-      </View>
-      <TextInput
-        onChange={bio => this.setState(() => ({ bio }))}
-        value={this.state.bio}
-        placeholder="Give us a small bio"
-      />
-      <TextInput
-        onChange={country => this.setState(() => ({ country }))}
-        value={this.state.country}
-        placeholder="Country of Origin"
-      />
-      <TextInput
-        onChange={education => this.setState(() => ({ education }))}
-        value={this.state.education}
-        placeholder="Interests"
-      />
-      <View
-              style={{
-                width: '100%',
-                alignItems: 'center',
-                margin: 30,
-                justifyContent: 'center',
-                flexDirection: 'row',
-                marginTop: 10,
-                
-              }}
-            >
-              <Button
-                style={
-                  this.state.language === 'en' ? styles.btnActive : styles.btn
-                }
-                onPress={() => this.setState(() => ({ language: 'en' }))}
-              >
-                <Text color={'#fff'}>En</Text>
-              </Button>
-              <Button
-                style={this.state.language === 'es' ? styles.btnActive : null}
-                onPress={() => this.setState(() => ({ language: 'es' }))}
-              >
-                <Text color={'#fff'}>Es</Text>
-              </Button>
-            </View>
-      <View style={styles.finishContainer}>
-        <Button onPress={this.finishLogin} size="xl" txtColor={'white'} >
-          Finish
-        </Button>
-      </View>
-    </Screen>
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingLeft: 10,
+          paddingRight: 10,
+        }}
+      >
+        <View style={{ alignItems: 'center', padding: 10, width: '100%' }}>
+          <Text size="lg" weight="medium" color="#000">
+            We Need Some Info
+          </Text>
+        </View>
+        <TextInput
+          onChange={bio => this.setState(() => ({ bio }))}
+          value={this.state.bio}
+          placeholder="Give us a small bio"
+        />
+        <TextInput
+          onChange={country => this.setState(() => ({ country }))}
+          value={this.state.country}
+          placeholder="Country of Origin"
+        />
+        <TextInput
+          onChange={education => this.setState(() => ({ education }))}
+          value={this.state.education}
+          placeholder="Education"
+        />
+        <TextInput
+          onChange={username => this.setState(() => ({ username }))}
+          value={this.state.username}
+          placeholder="Username"
+          autoCapitalize="none"
+        />
+        <View
+          style={{
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'row',
+            marginTop: 10,
+          }}
+        >
+          <Button
+            style={this.state.language === 'en' ? styles.btnActive : styles.btn}
+            onPress={() => this.setState(() => ({ language: 'en' }))}
+          >
+            <Text color={'#fff'}>En</Text>
+          </Button>
+          <Button
+            style={this.state.language === 'es' ? styles.btnActive : null}
+            onPress={() => this.setState(() => ({ language: 'es' }))}
+          >
+            <Text color={'#fff'}>Es</Text>
+          </Button>
+        </View>
+        <View style={styles.finishContainer}>
+          <Button onPress={this.finishLogin} size="xl" txtColor={'white'}>
+            Finish
+          </Button>
+        </View>
+      </Screen>
     );
   }
 }
@@ -155,6 +158,5 @@ let styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
 });
-
 
 export default Settings;

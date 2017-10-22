@@ -15,10 +15,9 @@ class CompleteLogin extends Component {
     return {
       headerTitle: (
         <Text size="xl" weight="bold">
-          "Mentor"
-          {/* {navigation.state.params.role === 'mentor'
+          {navigation.state.params.role === 'mentor'
             ? screenProps.t('completeLogin:mentor')
-            : screenProps.t('completeLogin:mentee')} */}
+            : screenProps.t('completeLogin:mentee')}
         </Text>
       ),
       headerStyle: screenTabStyles,
@@ -34,7 +33,6 @@ class CompleteLogin extends Component {
     picture: '',
     bio: '',
     country: '',
-    education: '',
     language: '',
     role: '',
   };
@@ -53,17 +51,12 @@ class CompleteLogin extends Component {
     }));
   }
 
-  onDateChange = dob =>
-    this.setState(() => ({
-      dob: moment(dob, 'MMMM DD, YYYY').format('MMMM DD, YYYY'),
-    }));
-
   finishLogin = async () => {
     const {
       fbId,
       bio,
       country,
-      education,
+      interest,
       language,
       firstName,
       lastName,
@@ -77,7 +70,7 @@ class CompleteLogin extends Component {
     const { login, navigation } = this.props;
     //
     try {
-      let res = await fetch('https://mywebsite.com/user/', {
+      let res = await fetch('https://33a690dc.ngrok.io/user', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -87,10 +80,10 @@ class CompleteLogin extends Component {
           facebook_id: fbId,
           bio,
           country_of_origin: country,
-          education,
           language,
           first_name: firstName,
           last_name: lastName,
+          interest: interest,
           email,
           gender,
           dob,
@@ -142,14 +135,15 @@ class CompleteLogin extends Component {
           placeholder="Country of Origin"
         />
         <TextInput
-          onChange={education => this.setState(() => ({ education }))}
-          value={this.state.education}
-          placeholder="Education"
+          onChange={interest => this.setState(() => ({ interest }))}
+          value={this.state.interest}
+          placeholder="Interest"
+          autoCapitalize="none"
         />
         <TextInput
-          onChange={username => this.setState(() => ({ username }))}
-          value={this.state.username}
-          placeholder="Username"
+          onChange={language => this.setState(() => ({ language }))}
+          value={this.state.language}
+          placeholder="Language"
           autoCapitalize="none"
         />
         <View
