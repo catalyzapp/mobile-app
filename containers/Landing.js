@@ -138,6 +138,7 @@ let styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
+  
 });
 
 export default translate(['langing', 'common'], { wait: true })(Landing);
