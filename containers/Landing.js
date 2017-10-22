@@ -10,11 +10,11 @@ class Landing extends Component {
   };
 
   async componentDidMount() {
-    // let authed = await getAuth();
-    //
-    // if (authed.dob && authed.dob !== '') {
-    //   this.props.navigation.navigate('Home');
-    // }
+    let authed = await getAuth();
+
+    if (authed.language && authed.language !== '') {
+      this.props.navigation.navigate('Home');
+    }
   }
 
   state = {
@@ -25,13 +25,15 @@ class Landing extends Component {
     try {
       const { getUser } = this.props;
       let isLoggedIn = await logIn();
+      let account = await getAuth();
 
-      // if (accountExists.data.User && accountExists.data.User.dob) {
-      //   setAuth(accountExists.data.User);
-      this.props.navigation.navigate('Home');
-      // } else if (isLoggedIn) {
-      //   this.props.navigation.navigate('CompleteLogin');
-      // }
+      let res = await fetch(`\https://mywebsite.com/user/${account.fbId}`);
+
+      if (res.status === 200) {
+        this.props.navigation.navigate('Home');
+      } else {
+        this.props.navigation.navigate('CompleteLogin');
+      }
     } catch (e) {
       console.log(e);
       Alert.alert('Failure', 'Failed to login with fb');
