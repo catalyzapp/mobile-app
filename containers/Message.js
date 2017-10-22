@@ -17,7 +17,7 @@ import Button from '../components/lib/Button';
 import Card from '../components/lib/Card';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
-class Notifications extends Component {
+class Message extends Component {
   state = {
     messages: [
       {
@@ -61,4 +61,4 @@ class Notifications extends Component {
   }
 }
 
-export default Notifications;
+export default Message;

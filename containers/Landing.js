@@ -73,7 +73,9 @@ class Landing extends Component {
           >
             <View>
               <Text size="lg">{t('landing:help')}</Text>
-              <Text size="md">{t('landing:role')}</Text>
+              <Text size="md" color="#BDBDBD">
+                {t('landing:role')}
+              </Text>
             </View>
             <View
               style={{
@@ -90,13 +92,17 @@ class Landing extends Component {
                 }
                 onPress={() => this.setState(() => ({ role: 'mentor' }))}
               >
-                <Text color={'#fff'}>{t('landing:mentor')}</Text>
+                <Text color={'#fff'} weight="medium">
+                  {t('landing:mentor')}
+                </Text>
               </Button>
               <Button
                 style={this.state.role === 'mentee' ? styles.btnActive : null}
                 onPress={() => this.setState(() => ({ role: 'mentee' }))}
               >
-                <Text color={'#fff'}>{t('landing:mentee')}</Text>
+                <Text color={'#fff'} weight="medium">
+                  {t('landing:mentee')}
+                </Text>
               </Button>
             </View>
           </View>
@@ -129,8 +135,8 @@ let styles = StyleSheet.create({
   },
   img: {
     flex: 2,
-    width: 260,
-    height: 260,
+    width: 200,
+    height: 200,
   },
   btnContainer: {
     flex: 1,

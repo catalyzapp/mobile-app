@@ -39,7 +39,7 @@ let styles = StyleSheet.create({
     borderRadius: 6,
   },
   extraMargin: {
-    marginTop: 40,
+    marginTop: 30,
   },
 });
 
