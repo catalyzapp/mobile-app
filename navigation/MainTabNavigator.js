@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation';
 import Home from '../containers/Home';
-import Notifications from '../containers/Notifications';
+import Messages from '../containers/Messages';
 import Settings from '../containers/Settings';
 
 let HomeStack = StackNavigator(
@@ -23,8 +23,8 @@ export default TabNavigator(
     Home: {
       screen: HomeStack,
     },
-    Notifications: {
-      screen: Notifications,
+    Messages: {
+      screen: Messages,
     },
     Settings: {
       screen: Settings,
@@ -39,14 +39,14 @@ export default TabNavigator(
           case 'Home':
             iconName =
               Platform.OS === 'ios'
-                ? `ios-information-circle${focused ? '' : '-outline'}`
-                : 'md-information-circle';
+                ? `ios-home${focused ? '' : '-outline'}`
+                : 'md-home';
             break;
-          case 'Links':
+          case 'Messages':
             iconName =
               Platform.OS === 'ios'
-                ? `ios-link${focused ? '' : '-outline'}`
-                : 'md-link';
+                ? `ios-chatboxes${focused ? '' : '-outline'}`
+                : 'md-chatboxes';
             break;
           case 'Settings':
             iconName =

@@ -2,10 +2,13 @@ import { Alert } from 'react-native';
 import { Facebook, SecureStore } from 'expo';
 
 export async function logIn() {
-  const cred = await Facebook.logInWithReadPermissionsAsync('380069495731738', {
-    permissions: ['public_profile', 'email'],
-    // behavior: 'native',
-  });
+  const cred = await Facebook.logInWithReadPermissionsAsync(
+    '1559267484111610',
+    {
+      permissions: ['public_profile', 'email'],
+      // behavior: 'native',
+    },
+  );
   if (cred.type === 'success') {
     const response = await fetch(
       `https://graph.facebook.com/me?fields=id,birthday,first_name,last_name,email,gender,picture&access_token=${cred.token}`,

@@ -20,13 +20,16 @@ class CompleteLogin extends Component {
   };
 
   state = {
+    fbid: '',
     firstName: '',
     lastName: '',
-    username: '',
     email: '',
     gender: '',
-    dob: null,
     picture: '',
+    bio: '',
+    country: '',
+    education: '',
+    language: '',
   };
 
   async componentDidMount() {
@@ -50,6 +53,10 @@ class CompleteLogin extends Component {
   finishLogin = async () => {
     const {
       fbId,
+      bio,
+      country,
+      education,
+      language,
       firstName,
       lastName,
       username,
@@ -61,23 +68,36 @@ class CompleteLogin extends Component {
     const { login, navigation } = this.props;
     //
     try {
-      //   let isLoggedIn = await login({
-      //     variables: {
-      //       firstName,
-      //       lastName,
-      //       username,
-      //       email,
-      //       fbId,
-      //       gender,
-      //       dob: moment(dob, 'MMMM DD, YYYY').format(),
-      //       picture,
-      //     },
-      //   });
+      let res = await fetch('https://mywebsite.com/user/', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          facebook_id: fbId,
+          bio,
+          country_of_origin: country,
+          education,
+          language,
+          first_name: firstName,
+          last_name: lastName,
+          email,
+          gender,
+          dob,
+          image_link: picture,
+          role,
+        }),
+      });
 
-      // console.log(isLoggedIn.data.createUser);
+      console.log(res);
 
-      setAuth(this.state);
-      navigation.navigate('Home');
+      if (res.status == 200) {
+        setAuth(this.state);
+        navigation.navigate('Home');
+      } else {
+        throw '400 Response';
+      }
     } catch (e) {
       console.log(e);
       Alert.alert('Failed to finish login', 'Something went wrong');

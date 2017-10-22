@@ -43,11 +43,11 @@ class Landing extends Component {
   render() {
     return (
       <Screen style={styles.container}>
-        {/* <Image
+        <Image
           style={styles.img}
-          source={require('../assets/icons/logoBig.png')}
+          source={require('../assets/images/splash.png')}
           resizeMode="contain"
-        /> */}
+        />
         <View style={styles.btnContainer}>
           <Button size="lg" onPress={this.doLogin}>
             Login with Facebook
@@ -66,7 +66,7 @@ let styles = StyleSheet.create({
   },
   img: {
     flex: 2,
-    width: 180,
+    width: 260,
     height: 260,
   },
   btnContainer: {
