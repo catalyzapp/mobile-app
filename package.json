@@ -1,0 +1,27 @@
+{
+  "name": "koality",
+  "version": "0.0.0",
+  "description": "Hello Expo!",
+  "author": null,
+  "license": "",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "test": "node ./node_modules/jest/bin/jest.js --watch"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "@expo/samples": "2.1.1",
+    "expo": "^22.0.0",
+    "moment": "^2.19.1",
+    "react": "16.0.0-beta.5",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-22.0.1.tar.gz",
+    "react-native-datepicker": "^1.6.0",
+    "react-native-swiper": "^1.5.13",
+    "react-navigation": "^1.0.0-beta.15"
+  },
+  "devDependencies": {
+    "jest-expo": "^22.0.0"
+  }
+}
