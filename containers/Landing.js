@@ -39,13 +39,15 @@ class Landing extends Component {
 
       setAuth({ ...account, role: this.state.role });
 
-      // let res = await fetch(`\https://mywebsite.com/user/${account.fbId}`);
+      let res = await fetch(`https://33a690dc.ngrok.io/user/${account.fbId}`);
 
-      // if (res.status === 200) {
-      this.props.navigation.navigate('Home', { role: this.state.role });
-      // } else {
-      //   this.props.navigation.navigate('CompleteLogin');
-      // }
+      if (res.status === 200) {
+        this.props.navigation.navigate('Home', { role: this.state.role });
+      } else {
+        this.props.navigation.navigate('CompleteLogin', {
+          role: this.state.role,
+        });
+      }
     } catch (e) {
       console.log(e);
       Alert.alert('Failure', 'Failed to login with fb');
