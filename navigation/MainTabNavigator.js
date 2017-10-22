@@ -22,13 +22,28 @@ let HomeStack = StackNavigator(
   },
 );
 
+let ConversationStack = StackNavigator(
+  {
+    Messages: {
+      screen: Messages,
+    },
+    Message: {
+      screen: Message,
+    },
+  },
+  {
+    initialRouteName: 'Messages',
+    headerMode: 'none',
+  },
+);
+
 export default TabNavigator(
   {
     Home: {
       screen: HomeStack,
     },
     Messages: {
-      screen: Messages,
+      screen: ConversationStack,
     },
     Settings: {
       screen: Settings,

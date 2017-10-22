@@ -20,9 +20,9 @@ import { screenTabStyles } from '../styles/navigatorStyles';
 
 function Thread(props) {
   return (
-    <View>
+    <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
       <Text>{props.bio}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -35,7 +35,7 @@ class Messages extends Component {
   };
 
   state = {
-    threads: [],
+    threads: [{ bio: "I'm in dire need of help" }],
   };
 
   async componentDidMount() {
@@ -58,7 +58,11 @@ class Messages extends Component {
     console.log(this.props);
     return (
       <Screen style={{ alignItems: 'center' }}>
-        <List data={this.state.threads} ui={Thread} />
+        <List
+          data={this.state.threads}
+          navigate={this.props.navigation.navigate}
+          ui={Thread}
+        />
       </Screen>
     );
   }

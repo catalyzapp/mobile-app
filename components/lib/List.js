@@ -16,7 +16,9 @@ class List extends Component {
         <FlatList
           data={this.props.data}
           style={{ flex: 1 }}
-          renderItem={({ item }) => <Ui {...item} />}
+          renderItem={({ item }) => (
+            <Ui navigate={this.props.navigate} {...item} />
+          )}
           keyExtractor={(item, index) => index + 1}
         />
       </View>
