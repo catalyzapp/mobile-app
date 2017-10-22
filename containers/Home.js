@@ -10,6 +10,7 @@ import {
   Alert,
 } from 'react-native';
 import { NavigationActions } from 'react-navigation';
+import { translate, Trans } from 'react-i18next';
 import Screen from '../components/lib/Screen';
 import Listing from '../components/lib/Listing';
 import List from '../components/lib/List';
@@ -18,14 +19,16 @@ import TextInput from '../components/lib/TextInput';
 import Card from '../components/lib/Card';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
-class HomeScreen extends Component {
-  static navigationOptions = ({ navigate }) => {
+class Home extends Component {
+  static navigationOptions = ({ navigation, screenProps }) => {
     return {
-      headerTitle: 'Home',
+      headerTitle: screenProps.t('home:title'), //,
       headerStyle: screenTabStyles,
     };
   };
+
   render() {
+    console.log(this.props);
     return (
       <Screen style={{ alignItems: 'center' }}>
         <Card>Some kid who needs a lot of help.</Card>
@@ -34,4 +37,4 @@ class HomeScreen extends Component {
   }
 }
 
-export default HomeScreen;
+export default translate(['home', 'common'], { wait: true })(Home);

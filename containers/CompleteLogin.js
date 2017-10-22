@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Image, Alert } from 'react-native';
 import moment from 'moment';
 import Screen from '../components/lib/Screen';
+import { translate, Trans } from 'react-i18next';
 import Text from '../components/lib/Text';
 import TextInput from '../components/lib/TextInput';
 import Datepicker from '../components/lib/Datepicker';
@@ -10,13 +11,17 @@ import { getAuth, setAuth } from '../navigation/utils';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
 class CompleteLogin extends Component {
-  static navigationOptions = {
-    headerTitle: (
-      <Text size="xl" weight="bold">
-        Mentor
-      </Text>
-    ),
-    headerStyle: screenTabStyles,
+  static navigationOptions = ({ navigation, screenProps }) => {
+    return {
+      headerTitle: (
+        <Text size="xl" weight="bold">
+          {navigation.state.params.role === 'mentor'
+            ? screenProps.t('completeLogin:mentor')
+            : screenProps.t('completeLogin:mentee')}
+        </Text>
+      ),
+      headerStyle: screenTabStyles,
+    };
   };
 
   state = {
@@ -182,4 +187,6 @@ let styles = StyleSheet.create({
   },
 });
 
-export default CompleteLogin;
+export default translate(['completeLogin', 'common'], { wait: true })(
+  CompleteLogin,
+);

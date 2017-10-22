@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { translate, Trans } from 'react-i18next';
 import { View, Image, StyleSheet, Alert } from 'react-native';
 import Screen from '../components/lib/Screen';
 import Text from '../components/lib/Text';
@@ -41,7 +42,7 @@ class Landing extends Component {
       // let res = await fetch(`\https://mywebsite.com/user/${account.fbId}`);
 
       // if (res.status === 200) {
-      this.props.navigation.navigate('Home');
+      this.props.navigation.navigate('Home', { role: this.state.role });
       // } else {
       //   this.props.navigation.navigate('CompleteLogin');
       // }
@@ -54,6 +55,7 @@ class Landing extends Component {
   };
 
   render() {
+    let t = this.props.screenProps.t;
     return (
       <Screen style={styles.container}>
         <Image
@@ -70,8 +72,8 @@ class Landing extends Component {
             }}
           >
             <View>
-              <Text size="lg">Help or be helped?</Text>
-              <Text size="md">Mentor or Mentee?</Text>
+              <Text size="lg">{t('landing:help')}</Text>
+              <Text size="md">{t('landing:role')}</Text>
             </View>
             <View
               style={{
@@ -89,7 +91,7 @@ class Landing extends Component {
                 onPress={() => this.setState(() => ({ role: 'mentor' }))}
               >
                 <Text color={this.state.role === 'mentor' ? '#fff' : '#000'}>
-                  I'm here to help
+                  {t('landing:mentor')}
                 </Text>
               </Button>
               <Button
@@ -97,7 +99,7 @@ class Landing extends Component {
                 onPress={() => this.setState(() => ({ role: 'mentee' }))}
               >
                 <Text color={this.state.role === 'mentee' ? '#fff' : '#000'}>
-                  I'm here to help
+                  {t('landing:mentee')}
                 </Text>
               </Button>
             </View>
@@ -107,7 +109,7 @@ class Landing extends Component {
             onPress={this.doLogin}
             style={{ width: 252, marginTop: 10 }}
           >
-            Login with Facebook
+            {t('landing:login')}
           </Button>
         </View>
       </Screen>
@@ -141,4 +143,4 @@ let styles = StyleSheet.create({
   },
 });
 
-export default Landing;
+export default translate(['langing', 'common'], { wait: true })(Landing);
