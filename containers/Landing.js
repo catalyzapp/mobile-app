@@ -90,23 +90,20 @@ class Landing extends Component {
                 }
                 onPress={() => this.setState(() => ({ role: 'mentor' }))}
               >
-                <Text color={this.state.role === 'mentor' ? '#fff' : '#000'}>
-                  {t('landing:mentor')}
-                </Text>
+                <Text color={'#fff'}>{t('landing:mentor')}</Text>
               </Button>
               <Button
                 style={this.state.role === 'mentee' ? styles.btnActive : null}
                 onPress={() => this.setState(() => ({ role: 'mentee' }))}
               >
-                <Text color={this.state.role === 'mentee' ? '#fff' : '#000'}>
-                  {t('landing:mentee')}
-                </Text>
+                <Text color={'#fff'}>{t('landing:mentee')}</Text>
               </Button>
             </View>
           </View>
           <Button
             size="lg"
             onPress={this.doLogin}
+            txtColor="#fff"
             style={{ width: 252, marginTop: 10 }}
           >
             {t('landing:login')}
