@@ -20,7 +20,15 @@ import { screenTabStyles } from '../styles/navigatorStyles';
 
 function Thread(props) {
   return (
-    <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
+    <TouchableOpacity
+      style={{
+        width: '100%',
+        height: 50,
+        backgroundColor: 'green',
+        padding: 10,
+      }}
+      onPress={() => props.navigate('Message', { person: '' })}
+    >
       <Text>{props.bio}</Text>
     </TouchableOpacity>
   );
@@ -57,7 +65,7 @@ class Messages extends Component {
   render() {
     console.log(this.props);
     return (
-      <Screen style={{ alignItems: 'center' }}>
+      <Screen style={{ alignItems: 'center', width: '100%' }}>
         <List
           data={this.state.threads}
           navigate={this.props.navigation.navigate}
