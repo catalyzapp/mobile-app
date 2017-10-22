@@ -64,6 +64,17 @@ export default TabNavigator(
         );
       },
     }),
+    tabBarOptions: {
+      showLabel: false,
+      style: {
+        backgroundColor: '#fff',
+        borderTopWidth: 0,
+      },
+      tabStyle: {
+        backgroundColor: '#fff',
+        borderTopWidth: 0,
+      },
+    },
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
     animationEnabled: false,

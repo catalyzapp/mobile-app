@@ -18,13 +18,16 @@ i18n
   .use(languageDetector)
   .use(reactI18nextModule)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'es',
 
     resources: {
       en: {
         landing: {
-          title: 'Login',
-          introduction: "Let's get started",
+          help: 'Help or be helped?',
+          role: 'Mentor or Mentee?',
+          mentor: "I'm here to help",
+          mentee: 'I want help',
+          login: 'Login with facebook',
         },
         completeLogin: {
           mentor: 'Mentor',
@@ -51,9 +54,15 @@ i18n
         },
       },
       es: {
+        home: {
+          title: 'Bienvenido',
+        },
         landing: {
-          title: 'Iniciar Sesión',
-          introduction: "Empecemos",
+          help: 'Ayuda o ser ayudado?',
+          role: 'Mentor o Mentee?',
+          mentor: 'estoy aqui para ayudar',
+          mentee: 'quiero ayuda',
+          login: 'Iniciar sesión con Facebook',
         },
         completeLogin: {
           mentor: 'Mentor',
