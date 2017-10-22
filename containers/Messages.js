@@ -15,50 +15,56 @@ import Screen from '../components/lib/Screen';
 import List from '../components/lib/List';
 import Button from '../components/lib/Button';
 import Card from '../components/lib/Card';
+import { getAuth, setAuth } from '../navigation/utils';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
-class Notifications extends Component {
-  state = {
-    messages: [
-      {
-        _id: 1,
-        text: 'Hello developer',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://facebook.github.io/react/img/logo_og.png',
-        },
-      },
-    ],
-  };
 
+function Thread (props {
+  return (
+    <View>
+      <Text>{props.bio}</Text>
+    </View>
+  );
+}
+
+class Messages extends Component {
   static navigationOptions = ({ navigate }) => {
     return {
-      headerTitle: 'Matches',
+      headerTitle: 'Conversations',
       headerStyle: screenTabStyles,
     };
   };
 
-  onSend(messages = []) {
-    this.setState(previousState => ({
-      messages: GiftedChat.append(previousState.messages, messages),
-    }));
+  state = {
+    threads: [
+
+    ],
+  };
+
+  async componentDidMount() {
+    let account = getAuth();
+
+    // let res = await fetch(`https://mywebsite.com/history/`, {
+    //   method: 'POST',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     facebook_id: account.facebook_id,
+    //   }),
+    // });
+
+    // this.setState(() => ({ threads: res.conversations }));
   }
 
   render() {
     return (
-      // <Screen style={{ alignItems: 'center' }}>
-      <GiftedChat
-        messages={this.state.messages}
-        onSend={messages => this.onSend(messages)}
-        user={{
-          _id: 1,
-        }}
-      />
-      // </Screen>
+      <Screen style={{ alignItems: 'center' }}>
+        <List data={this.state.threads} ui={Thread}/>
+      </Screen>
     );
   }
 }
 
-export default Notifications;
+export default Messages;

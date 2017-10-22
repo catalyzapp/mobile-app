@@ -8,57 +8,15 @@ import {
 } from 'react-native';
 
 class List extends Component {
-  state = {
-    grid: true,
-  };
-
-  renderMenu = () => {
-    if (this.props.layoutOptions) {
-      return (
-        <View style={styles.horizontal}>
-          <TouchableOpacity
-            onPress={() => this.setState(() => ({ grid: true }))}
-          >
-            <Text>{this.state.grid === true ? 'GRID' : 'grid'}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.setState(() => ({ grid: false }))}
-          >
-            <Text>{this.state.grid === true ? 'table' : 'TABLE'}</Text>
-          </TouchableOpacity>
-        </View>
-      );
-    }
-
-    return null;
-  };
-
   render() {
     let Ui = this.props.ui;
-    if (this.props.grid === false || this.state.grid === false) {
-      return (
-        <View>
-          {this.renderMenu()}
-          <FlatList
-            key="table"
-            data={this.props.data}
-            style={{ flex: 1 }}
-            renderItem={({ item }) => <Ui {...item} grid={false} />}
-            keyExtractor={(item, index) => item.id || index}
-          />
-        </View>
-      );
-    }
 
     return (
       <View>
-        {this.renderMenu()}
         <FlatList
-          key="grid"
-          numColumns="2"
           data={this.props.data}
           style={{ flex: 1 }}
-          renderItem={({ item }) => <Ui {...item} grid={true} />}
+          renderItem={({ item }) => <Ui {...item} />}
           keyExtractor={(item, index) => index + 1}
         />
       </View>
