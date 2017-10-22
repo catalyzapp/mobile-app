@@ -1,6 +1,8 @@
 import React from 'react';
 import { TouchableHighlight, StyleSheet, View } from 'react-native';
 import Text from './Text';
+import { LinearGradient } from 'expo';
+
 
 function Button(props) {
   if (props.size === 'sm')
@@ -10,11 +12,14 @@ function Button(props) {
         onPress={props.onPress}
         underlayColor="rgba(0,0,0,0.05)"
       >
-        <View>
+        <LinearGradient
+          colors={['#8430FF','#D840FF']}
+          style={{ padding: 15, alignItems: 'center', borderRadius: 6 }}>
           <Text size="md" weight="medium" color={props.txtColor}>
             {props.children}
           </Text>
-        </View>
+          
+        </LinearGradient>
       </TouchableHighlight>
     );
 
@@ -25,11 +30,14 @@ function Button(props) {
         onPress={props.onPress}
         underlayColor="rgba(0,0,0,0.05)"
       >
-        <View>
+        <LinearGradient
+          colors={['#8430FF','#D840FF']}
+          style={{ padding: 15, alignItems: 'center', borderRadius: 6 }}>
           <Text size="lg" weight="medium" color={props.txtColor}>
             {props.children}
           </Text>
-        </View>
+
+        </LinearGradient>
       </TouchableHighlight>
     );
 
@@ -40,11 +48,14 @@ function Button(props) {
         onPress={props.onPress}
         underlayColor="rgba(0,0,0,0.05)"
       >
-        <View>
+        <LinearGradient
+          colors={['#8430FF','#D840FF']}
+          style={{ padding: 15, alignItems: 'center', borderRadius: 5 }}>
           <Text size="lg" weight="medium" color={props.txtColor}>
             {props.children}
           </Text>
-        </View>
+
+        </LinearGradient>
       </TouchableHighlight>
     );
 
@@ -54,11 +65,14 @@ function Button(props) {
       onPress={props.onPress}
       underlayColor="rgba(0,0,0,0.05)"
     >
-      <View>
+      <LinearGradient
+        colors={['#8430FF','#D840FF']}
+        style={{ padding: 15, alignItems: 'center', borderRadius: 5 }}>
         <Text size="md" weight="medium" color={props.txtColor}>
           {props.children}
         </Text>
-      </View>
+
+      </LinearGradient>
     </TouchableHighlight>
   );
 }

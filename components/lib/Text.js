@@ -17,7 +17,7 @@ function Text(props) {
   if (props.size === 'xl') size = styles.xl;
 
   return (
-    <T style={[size, weight, { color: props.color }, props.styles]}>
+    <T style={[size, weight, { color: props.color }, props.style]}>
       {props.children}
     </T>
   );
