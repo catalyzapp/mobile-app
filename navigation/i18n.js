@@ -52,24 +52,19 @@ i18n
       },
       es: {
         landing: {
-          title: 'Login',
-          introduction: "Let's get started",
+          title: 'Iniciar Sesión',
+          introduction: "Empecemos",
         },
         completeLogin: {
           mentor: 'Mentor',
-          mentee: 'Mentee',
-          introduction: 'We need some info',
+          mentee: 'Aprendiz',
+          introduction: 'Necesitamos Información',
           inputs: {
-            bio: 'Give us a small bio',
-            country: 'Country of origin',
-            education: 'Education',
-            language: 'Language',
+            bio: 'Danos una pequeña Biografía',
+            country: 'País de origen',
+            education: 'Educación',
+            language: 'Idioma',
           },
-        },
-        home: {
-          title: 'Welcome',
-          introduction:
-            'This text comes from i18next and is provided in english.',
         },
         common: {
           currentLanguage: 'The current language is "{{lng}}"',
