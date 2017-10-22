@@ -152,6 +152,32 @@ class CompleteLogin extends Component {
           placeholder="Username"
           autoCapitalize="none"
         />
+        <View
+              style={{
+                width: '100%',
+                alignItems: 'center',
+                margin: 30,
+                justifyContent: 'center',
+                flexDirection: 'row',
+                marginTop: 10,
+                
+              }}
+            >
+              <Button
+                style={
+                  this.state.language === 'en' ? styles.btnActive : styles.btn
+                }
+                onPress={() => this.setState(() => ({ language: 'en' }))}
+              >
+                <Text color={'#fff'}>En</Text>
+              </Button>
+              <Button
+                style={this.state.language === 'es' ? styles.btnActive : null}
+                onPress={() => this.setState(() => ({ language: 'es' }))}
+              >
+                <Text color={'#fff'}>Es</Text>
+              </Button>
+            </View>
         <View style={styles.finishContainer}>
           <Button onPress={this.finishLogin} size="xl">
             Finish
@@ -165,10 +191,18 @@ class CompleteLogin extends Component {
 let styles = StyleSheet.create({
   btn: {
     height: 35,
+    margin: 10,
+    shadowColor: '#C6C6C6',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 5,
+    shadowRadius: 10,
   },
   btnActive: {
+    margin: 10,
+    padding: 10,
     height: 35,
-    backgroundColor: '#000',
+    shadowColor: '#C6C6C6',
+    shadowOpacity: 2,
   },
   genderGroup: {
     width: '100%',

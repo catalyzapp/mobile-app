@@ -84,21 +84,17 @@ class Settings extends Component {
       <TextInput
         onChange={education => this.setState(() => ({ education }))}
         value={this.state.education}
-        placeholder="Education"
-      />
-      <TextInput
-        onChange={username => this.setState(() => ({ username }))}
-        value={this.state.username}
-        placeholder="Username"
-        autoCapitalize="none"
+        placeholder="Interests"
       />
       <View
               style={{
                 width: '100%',
                 alignItems: 'center',
+                margin: 30,
                 justifyContent: 'center',
                 flexDirection: 'row',
                 marginTop: 10,
+                
               }}
             >
               <Button
@@ -129,10 +125,18 @@ class Settings extends Component {
 let styles = StyleSheet.create({
   btn: {
     height: 35,
+    margin: 10,
+    shadowColor: '#C6C6C6',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 5,
+    shadowRadius: 10,
   },
   btnActive: {
+    margin: 10,
+    padding: 10,
     height: 35,
-    backgroundColor: '#000',
+    shadowColor: '#C6C6C6',
+    shadowOpacity: 2,
   },
   genderGroup: {
     width: '100%',
