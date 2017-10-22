@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import Text from './Text';
 import { LinearGradient } from 'expo';
 
 function Card(props) {
+  console.log(props.navigation);
   return (
-    <LinearGradient
-      colors={['#DEFF59', '#7EFE63']}
-      style={[
-        styles.card,
-        props.extraMargin === true ? styles.extraMargin : {},
-        props.style,
-      ]}
-    >
-      <Text style={styles.text}>{props.children}</Text>
-      <Text style={styles.text}>Wanna Help</Text>
-    </LinearGradient>
+    <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
+      <View style={[styles.view]}>
+        <LinearGradient
+          colors={['#DEFF59', '#7EFE63']}
+          style={[
+            styles.card,
+            props.extraMargin === true ? styles.extraMargin : {},
+            props.style,
+          ]}
+        >
+          <Text style={styles.text}>{props.children}</Text>
+          <Text style={styles.text}>Want to Help?</Text>
+        </LinearGradient>
+      </View>
+    </TouchableOpacity>
   );
 }
 
 let styles = StyleSheet.create({
+  view: {
+    width: '100%',
+  },
   card: {
     borderRadius: 6,
     width: '90%',
