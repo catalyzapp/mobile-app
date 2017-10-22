@@ -1,6 +1,8 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import { translate } from 'react-i18next';
+import i18n from './i18n';
 import MainTabNavigator from './MainTabNavigator';
 import Landing from '../containers/Landing';
 import CompleteLogin from '../containers/CompleteLogin';
@@ -28,6 +30,15 @@ const RootStackNavigator = StackNavigator(
   },
 );
 
+const WrappedStack = () => {
+  return <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />;
+};
+
+const ReloadAppOnLanguageChange = translate('common', {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(WrappedStack);
+
 export default class RootNavigator extends React.Component {
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
@@ -38,7 +49,7 @@ export default class RootNavigator extends React.Component {
   }
 
   render() {
-    return <RootStackNavigator />;
+    return <ReloadAppOnLanguageChange />;
   }
 
   _registerForPushNotifications() {
