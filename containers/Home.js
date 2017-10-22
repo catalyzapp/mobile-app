@@ -14,9 +14,8 @@ import Screen from '../components/lib/Screen';
 import Listing from '../components/lib/Listing';
 import List from '../components/lib/List';
 import Button from '../components/lib/Button';
-import Swipe from '../components/lib/Swipe';
 import TextInput from '../components/lib/TextInput';
-import UserIdentity from '../components/lib/UserIdentity';
+import Card from '../components/lib/Card';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
 class HomeScreen extends Component {
@@ -28,8 +27,8 @@ class HomeScreen extends Component {
   };
   render() {
     return (
-      <Screen>
-        <Text>Home</Text>
+      <Screen style={{ alignItems: 'center' }}>
+        <Card>Some kid who needs a lot of help.</Card>
       </Screen>
     );
   }

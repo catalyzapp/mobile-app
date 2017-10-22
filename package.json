@@ -20,6 +20,7 @@
     "react-i18next": "^6.0.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-22.0.1.tar.gz",
     "react-native-datepicker": "^1.6.0",
+    "react-native-gifted-chat": "^0.2.9",
     "react-native-swiper": "^1.5.13",
     "react-navigation": "^1.0.0-beta.15"
   },
