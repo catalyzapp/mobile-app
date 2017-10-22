@@ -22,10 +22,16 @@ let styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#C6C6C6',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 5,
+    shadowRadius: 10,
+    backgroundColor: 'transparent',
   },
   text: {
     backgroundColor: 'transparent',
     fontSize: 15,
+    borderRadius: 6,
   },
 });
 
