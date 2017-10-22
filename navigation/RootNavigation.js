@@ -19,7 +19,7 @@ const RootStackNavigator = StackNavigator(
     },
   },
   {
-    initialRouteName: 'Landing',
+    initialRouteName: 'Main',
     navigationOptions: () => ({
       headerTitleStyle: {
         fontWeight: 'normal',

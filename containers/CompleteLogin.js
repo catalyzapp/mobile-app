@@ -30,6 +30,7 @@ class CompleteLogin extends Component {
     country: '',
     education: '',
     language: '',
+    role: '',
   };
 
   async componentDidMount() {
@@ -42,6 +43,7 @@ class CompleteLogin extends Component {
       email: account.email,
       gender: account.gender,
       picture: account.picture,
+      role: account.role,
     }));
   }
 
@@ -63,6 +65,7 @@ class CompleteLogin extends Component {
       email,
       gender,
       dob,
+      role,
       picture,
     } = this.state;
     const { login, navigation } = this.props;
@@ -117,9 +120,9 @@ class CompleteLogin extends Component {
           paddingRight: 10,
         }}
       >
-        <View style={{ alignItems: 'flex-start', padding: 10, width: '100%' }}>
-          <Text size="md" weight="bold" color="#CFCFCF">
-            We need some info
+        <View style={{ alignItems: 'center', padding: 10, width: '100%' }}>
+          <Text size="lg" weight="medium" color="#000">
+            We Need Some Info
           </Text>
         </View>
         <TextInput
