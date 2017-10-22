@@ -3,6 +3,7 @@ import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation';
 import Home from '../containers/Home';
+import Message from '../containers/Message';
 import Messages from '../containers/Messages';
 import Settings from '../containers/Settings';
 
@@ -10,6 +11,9 @@ let HomeStack = StackNavigator(
   {
     Home: {
       screen: Home,
+    },
+    Message: {
+      screen: Message,
     },
   },
   {

@@ -36,10 +36,11 @@ class Home extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <Screen style={{ alignItems: 'center' }}>
-        <Card extraMargin={true}>Some kid who needs a lot of help.</Card>
+        <Card navigate={this.props.navigation.navigate} extraMargin={true}>
+          Some kid who needs a lot of help.
+        </Card>
       </Screen>
     );
   }
