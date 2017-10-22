@@ -12,16 +12,14 @@ class List extends Component {
     let Ui = this.props.ui;
 
     return (
-      <View>
-        <FlatList
-          data={this.props.data}
-          style={{ flex: 1 }}
-          renderItem={({ item }) => (
-            <Ui navigate={this.props.navigate} {...item} />
-          )}
-          keyExtractor={(item, index) => index + 1}
-        />
-      </View>
+      <FlatList
+        data={this.props.data}
+        style={{ flex: 1, width: '100%' }}
+        renderItem={({ item }) => (
+          <Ui navigate={this.props.navigate} {...item} />
+        )}
+        keyExtractor={(item, index) => index + 1}
+      />
     );
   }
 }
