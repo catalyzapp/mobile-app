@@ -87,9 +87,8 @@ class Landing extends Component {
               }}
             >
               <Button
-                style={
-                  this.state.role === 'mentor' ? styles.btnActive : styles.btn
-                }
+                style={styles.btn}
+                shadow={this.state.role === 'mentor' ? true : false}
                 onPress={() => this.setState(() => ({ role: 'mentor' }))}
               >
                 <Text color={'#fff'} weight="medium">
@@ -97,7 +96,7 @@ class Landing extends Component {
                 </Text>
               </Button>
               <Button
-                style={this.state.role === 'mentee' ? styles.btnActive : null}
+                shadow={this.state.role === 'mentee' ? true : false}
                 onPress={() => this.setState(() => ({ role: 'mentee' }))}
               >
                 <Text color={'#fff'} weight="medium">
@@ -108,6 +107,7 @@ class Landing extends Component {
           </View>
           <Button
             size="lg"
+            shadow={true}
             onPress={this.doLogin}
             txtColor="#fff"
             style={{ width: 252, marginTop: 10 }}

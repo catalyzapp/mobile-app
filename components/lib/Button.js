@@ -14,7 +14,11 @@ function Button(props) {
         <View>
           <LinearGradient
             colors={['#8430FF', '#D840FF']}
-            style={[styles.sm, props.style, props.shadow === false ? styles.shadow : {}]}
+            style={[
+              styles.sm,
+              props.style,
+              props.shadow === true ? styles.shadow : {},
+            ]}
           >
             <Text size="md" weight="medium" color={props.txtColor}>
               {props.children}
@@ -34,7 +38,11 @@ function Button(props) {
         <View>
           <LinearGradient
             colors={['#8430FF', '#D840FF']}
-            style={[styles.lg, props.style, props.shadow === false ? styles.shadow : {}]}
+            style={[
+              styles.lg,
+              props.style,
+              props.shadow === true ? styles.shadow : {},
+            ]}
           >
             <Text size="md" weight="medium" color={props.txtColor}>
               {props.children}
@@ -54,7 +62,11 @@ function Button(props) {
         <View>
           <LinearGradient
             colors={['#8430FF', '#D840FF']}
-            style={[styles.xl, props.style, props.shadow === false ? styles.shadow : {}]}
+            style={[
+              styles.xl,
+              props.style,
+              props.shadow === true ? styles.shadow : {},
+            ]}
           >
             <Text size="md" weight="medium" color={props.txtColor}>
               {props.children}
@@ -73,7 +85,11 @@ function Button(props) {
       <View>
         <LinearGradient
           colors={['#8430FF', '#D840FF']}
-          style={[styles.md, props.style, props.shadow === false ? styles.shadow : {}]}
+          style={[
+            styles.md,
+            props.style,
+            props.shadow === true ? styles.shadow : {},
+          ]}
         >
           <Text size="md" weight="medium" color={props.txtColor}>
             {props.children}
@@ -114,8 +130,8 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
   },
   shadow: {
-    shadowColor: '#C6C6C6',
-    shadowOffset: {width: 0, height: 5},
+    shadowColor: '#696969',
+    shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 5,
     shadowRadius: 10,
   },
