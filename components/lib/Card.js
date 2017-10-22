@@ -5,7 +5,10 @@ import { LinearGradient } from 'expo';
 
 function Card(props) {
   return (
-    <LinearGradient colors={['#DEFF59','#7EFE63']} style={styles.card}>
+    <LinearGradient
+      colors={['#DEFF59', '#7EFE63']}
+      style={[styles.card, props.style]}
+    >
       <Text style={styles.text}>{props.children}</Text>
       <Text style={styles.text}>Wanna Help</Text>
     </LinearGradient>
@@ -23,7 +26,7 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#C6C6C6',
-    shadowOffset: {width: 0, height: 5},
+    shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 5,
     shadowRadius: 10,
     backgroundColor: 'transparent',
