@@ -13,7 +13,7 @@ The following pictures will show you a flow of how you can sign up and become a 
 
 Step one: Here you have a log in page wich connects to Facebook
 
-![Catalyze1] (https://image.ibb.co/nM1sd6/Screen_Shot_2017_10_22_at_12_28_07_PM.png)
+![Catalyze2](https://image.ibb.co/nM1sd6/Screen_Shot_2017_10_22_at_12_28_07_PM.png)
 
 Step two: Mentors will follow the following flow
 
