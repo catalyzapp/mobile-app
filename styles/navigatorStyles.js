@@ -3,4 +3,5 @@ export const screenTabStyles = {
   borderBottomWidth: 0,
   paddingLeft: 10,
   paddingRight: 10,
+  height: 80,
 };

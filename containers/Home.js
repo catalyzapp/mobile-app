@@ -4,7 +4,6 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
   Alert,
@@ -16,13 +15,22 @@ import Listing from '../components/lib/Listing';
 import List from '../components/lib/List';
 import Button from '../components/lib/Button';
 import TextInput from '../components/lib/TextInput';
+import Text from '../components/lib/Text';
 import Card from '../components/lib/Card';
 import { screenTabStyles } from '../styles/navigatorStyles';
 
 class Home extends Component {
   static navigationOptions = ({ navigation, screenProps }) => {
     return {
-      headerTitle: screenProps.t('home:title'), //,
+      headerLeft: (
+        <Text
+          size="xl"
+          weight="bold"
+          style={{ paddingTop: 30, paddingBottom: 20 }}
+        >
+          {screenProps.t('home:title')}
+        </Text>
+      ),
       headerStyle: screenTabStyles,
     };
   };
@@ -31,7 +39,7 @@ class Home extends Component {
     console.log(this.props);
     return (
       <Screen style={{ alignItems: 'center' }}>
-        <Card>Some kid who needs a lot of help.</Card>
+        <Card extraMargin={true}>Some kid who needs a lot of help.</Card>
       </Screen>
     );
   }
