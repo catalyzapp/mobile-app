@@ -6,22 +6,24 @@ import { LinearGradient } from 'expo';
 function Card(props) {
   console.log(props.navigation);
   if (props.small === true)
-    return(
-      <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
-      <View style={[styles.view]}>
-        <LinearGradient
-          colors={['#DEFF59', '#7EFE63']}
-          style={[
-            styles.cardSm,
-            props.extraMargin === true ? styles.extraMargin : {},
-            props.style,
-          ]}
-        >
-          <Text style={styles.text}>{props.children}</Text>
-          <Text style={styles.text}>Want to Help?</Text>
-        </LinearGradient>
-      </View>
-    </TouchableOpacity>
+    return (
+      <TouchableOpacity
+        onPress={() => props.navigate('Message', { person: '' })}
+      >
+        <View style={[styles.view]}>
+          <LinearGradient
+            colors={['#DEFF59', '#7EFE63']}
+            style={[
+              styles.cardSm,
+              props.extraMargin === true ? styles.extraMargin : {},
+              props.style,
+            ]}
+          >
+            <Text style={styles.text}>{props.children}</Text>
+            <Text style={styles.text}>Want to Help?</Text>
+          </LinearGradient>
+        </View>
+      </TouchableOpacity>
     );
 
   return (

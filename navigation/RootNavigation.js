@@ -21,7 +21,7 @@ const RootStackNavigator = StackNavigator(
     },
   },
   {
-    initialRouteName: 'Main',
+    initialRouteName: 'Landing',
     navigationOptions: () => ({
       headerTitleStyle: {
         fontWeight: 'normal',

@@ -39,15 +39,19 @@ export async function logIn() {
 }
 
 export function setAuth(account) {
-  SecureStore.setItemAsync('sellYourSolesAuth5120019', JSON.stringify(account));
+  SecureStore.setItemAsync('catalyzeAuthBih', JSON.stringify(account));
 }
 
 export async function getAuth() {
-  let preparse = await SecureStore.getItemAsync('sellYourSolesAuth5120019');
+  let preparse = await SecureStore.getItemAsync('catalyzeAuthBih');
+  if (preparse === undefined || preparse === null) {
+    return false;
+  }
+
   let account = JSON.parse(preparse);
   return account;
 }
 
 export function deleteAuth() {
-  SecureStore.deleteItemAsync('sellYourSolesAuth5120019');
+  SecureStore.deleteItemAsync('catalyzeAuthBih');
 }

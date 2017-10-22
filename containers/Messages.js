@@ -48,18 +48,18 @@ class Messages extends Component {
 
   async componentDidMount() {
     let account = getAuth();
-    // let res = await fetch(`https://mywebsite.com/history/`, {
-    //   method: 'POST',
-    //   headers: {
-    //     Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     facebook_id: account.facebook_id,
-    //   }),
-    // });
+    let res = await fetch(`https://mywebsite.com/history/`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        facebook_id: account.fbId,
+      }),
+    });
 
-    // this.setState(() => ({ threads: res.conversations }));
+    this.setState(() => ({ threads: res.conversations }));
   }
 
   render() {
@@ -78,18 +78,11 @@ class Messages extends Component {
 }
 
 let styles = StyleSheet.create({
-  btn: {
-  },
-  btnActive: {
-
-  },
-  genderGroup: {
-  },
-  img: {
-  },
-  finishContainer: {
-
-  },
+  btn: {},
+  btnActive: {},
+  genderGroup: {},
+  img: {},
+  finishContainer: {},
 });
 
 export default Messages;
