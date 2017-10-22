@@ -5,6 +5,25 @@ import { LinearGradient } from 'expo';
 
 function Card(props) {
   console.log(props.navigation);
+  if (props.small === true)
+    return(
+      <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
+      <View style={[styles.view]}>
+        <LinearGradient
+          colors={['#DEFF59', '#7EFE63']}
+          style={[
+            styles.cardSm,
+            props.extraMargin === true ? styles.extraMargin : {},
+            props.style,
+          ]}
+        >
+          <Text style={styles.text}>{props.children}</Text>
+          <Text style={styles.text}>Want to Help?</Text>
+        </LinearGradient>
+      </View>
+    </TouchableOpacity>
+    );
+
   return (
     <TouchableOpacity onPress={() => props.navigate('Message', { person: '' })}>
       <View style={[styles.view]}>
@@ -32,6 +51,19 @@ let styles = StyleSheet.create({
     borderRadius: 6,
     width: '90%',
     height: 230,
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#C6C6C6',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 5,
+    shadowRadius: 10,
+    backgroundColor: 'transparent',
+  },
+  cardSm: {
+    borderRadius: 6,
+    width: '90%',
+    height: 70,
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',

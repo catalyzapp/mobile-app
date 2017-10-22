@@ -10,11 +10,22 @@ import {
 class List extends Component {
   render() {
     let Ui = this.props.ui;
-
+    if (this.props.small === true) {
+      return (
+        <FlatList
+          data={this.props.data}
+          style={{ flex: 1, width: '90%', padding: 20 }}
+          renderItem={({ item }) => (
+            <Ui navigate={this.props.navigate} small={true} {...item} />
+          )}
+          keyExtractor={(item, index) => index + 1}
+        />
+      );
+    }
     return (
       <FlatList
         data={this.props.data}
-        style={{ flex: 1, width: '100%' }}
+        style={{ flex: 1, width: '90%' }}
         renderItem={({ item }) => (
           <Ui navigate={this.props.navigate} {...item} />
         )}
